@@ -1,0 +1,40 @@
+form{
+	text-align: center;
+	margin-top: 200px;
+	position: relative;
+	border:1px solid black;
+	width:600px;
+	position: relative;
+	left: 300px;
+	background-color: #fc9d9d;
+}
+
+form .email,.password,.phone{
+	width:250px;
+	position: relative;
+	left:180px;
+}
+
+
+input {
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: groove;
+      background-color:#fc9d9d;
+      }
+ label{
+ 	position:relative;
+ 	right:10px;
+ 	top:15px;
+ 	font-size: 1.5em;
+ 	font-family: 'PT Sans Narrow', sans-serif;
+ }
+
+ #p2{
+ 	display: none;
+
+ }
+ #p3{
+ 	display: none;
+ }

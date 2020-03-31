@@ -1,0 +1,12 @@
+<%- include("header") -%>
+
+<div class="jumbotron">
+<form method="post" action="/sendmail">
+<input type=text  value="<%= name %>"</input>
+<input type="hidden" name="logeduser" value=<%= name %>> </input>
+<%finditems.forEach(function(user1){%>
+<textarea name="journal"><%=user1.text %> <%=user1.date  %></textarea>
+<%});%>
+<button type="submit" class="btn btn-primary" vlaue="sendmail2">send mail</button>
+</form>
+</div>

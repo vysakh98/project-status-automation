@@ -1,0 +1,47 @@
+<%- include("header") -%>
+<% if(user) {%>
+<div class="top container">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">project status automation</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/journal">journal<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/">Logout</a>
+	      </li>
+	      <form method="post" action="/sendemail">
+	      <li class="nav-item">
+	      	<% var user1 = usernamelogin ; %>
+	        <p name="logeduser"><%=usernamelogin%></p>
+	       </li>
+	       <li class="nav-item">
+	       <button type="submit" class="btn btn-primary">send mail</button>
+	       </li>
+	       <input type="hidden" name="username" value="<%=user1%>"></input>
+	       </form>
+	    </ul>
+	  </div>
+	</nav>
+	<%} else {%>
+	<a href="/">go back and login</a>
+	<%}%>
+</div>
+<% if(finditems) {%>
+<% finditems.forEach(function(user){ %>
+<div class="jumbotron">
+<p name="usertext"><%= user.text %></p>
+<p name="userdate"><%= user.date %></p>
+<p><%= user.username%></p>
+<% var u=user.username %>
+<input type="hidden" name="username" value="<%= u %>"></input>
+</div>
+<%});%>
+<%} else {%>
+<div>
+</div
+<%}%>
